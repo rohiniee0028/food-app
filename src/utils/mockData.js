@@ -1,41 +1,3 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
-import "./index.css";
-
-const Header = () => {
-    return (
-        <div className="header">
-            <div className="logo-container">
-                <img src='https://www.logodesign.net/logo/smoking-burger-with-lettuce-3624ld.png?nwm=1&nws=1&industry=food&sf=&txt_keyword=All' alt='company-logo' className="logo" />
-            </div>
-            <div className="nav-items">
-                <ul>
-                    <li>Home</li>
-                    <li>About Us</li>
-                    <li>Contact</li>
-                    <li>Cart</li>
-                </ul>
-            </div>
-        </div>
-    )
-}
-
-const RestaurantCard = (props) => {
-    const { name, cusines, rating, duration, cost, img} = props.resData;
-    return (
-        <div className="res-card" >
-            <img className="res-logo" src={img} alt={name} />
-            <div className="res-details">
-                <h3>{name}</h3>
-                <h4>{cusines}</h4>
-                <p className="rating">{rating}★</p>
-                <p className="duration">{duration}</p>
-                <p className="cost">Price: ₹{(cost/100).toLocaleString()}</p>
-            </div>
-        </div>
-    )
-}
-
 const resList = [
     {
         id: 1,
@@ -139,32 +101,4 @@ const resList = [
     }
 ]
 
-const Body = () => {
-    return (
-        <div className="body">
-            <div className="search">
-                <input type="search" placeholder="search food" className="search_input" />
-            </div>
-            <div className="res-container">
-                {resList.map((restaurant) => (
-                    <RestaurantCard key={restaurant.id} resData={restaurant} />
-                ))}
-            </div>
-        </div>
-    )
-}
-
-// not using keys (not acceptable) <<<<< index as keys <<<<<<<<<<<<<<< unique id as keys (best practice)
-
-const AppLayout = () => {
-    return (
-        <div className='app'>
-            <Header />
-            <Body />
-        </div>
-    )
-}
-
-const root = ReactDOM.createRoot(document.getElementById("root"));
-
-root.render(<AppLayout />);
+export default resList;
