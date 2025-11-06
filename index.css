@@ -1,108 +1,247 @@
-body{
+body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-.header{
+
+.header {
     /* make header fixed at top */
     position: fixed;
     z-index: 1000;
     top: 0;
     left: 0;
     right: 0;
-    height: 80px; /* explicit height so body can be offset */
+    height: 80px;
+    /* explicit height so body can be offset */
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 0 25px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    background: #fff; /* ensure it covers content when fixed */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background: #fff;
+    /* ensure it covers content when fixed */
 }
 
-.logo{
-    width: 80px;
+.logo {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
 }
 
-.nav-items > ul{
+.logo-container {
+    /* fixed container so shimmer and image occupy same space */
+    width: 100px;
+    height: 80px;
+    position: relative;
     display: flex;
+    align-items: center;
+}
+
+.logo-fallback {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f6f6f6;
+    color: #333;
+    font-weight: 600;
+    border-radius: 6px;
+}
+
+.nav-items>ul {
+    display: flex;
+    align-items: center;
     gap: 20px;
     list-style-type: none;
 }
 
-.nav-items > ul > li{
+.nav-items>ul>li {
     font-size: 18px;
     font-weight: 500;
     cursor: pointer;
     margin-left: 10px;
 }
 
-.body{
+.body {
     position: relative;
     /* add top padding equal to header height + some spacing so content sits below fixed header */
     padding: 20px 25px 40px 25px;
     padding-top: calc(80px + 50px);
     margin: 0;
+
+    .top-controls {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        justify-content: center;
+
+        .filter-btn {
+            padding: 10px 15px;
+            font-size: 16px;
+            border: none;
+            border-radius: 8px;
+            background-color: #28a745;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+
+            &:hover {
+                background-color: #218838;
+            }
+        }
+    }
 }
 
-.search{
+.search {
+    display: flex;
+    align-items: center;
     width: 500px;
     font-size: 16px;
-    margin: auto;
+    /* margin: auto; */
     padding: 5px 10px;
     border: 1px solid #ccc;
     border-radius: 8px;
-}
-.search_input{
-    padding: 8px;
-    font-size: 16px;
-    width: 100%;
-    border: none;
-    outline: none;
-    border-radius: 8px;
+
+    .search_input {
+        padding: 8px;
+        font-size: 16px;
+        width: 100%;
+        border: none;
+        outline: none;
+        border-radius: 8px;
+    }
+
+    .search-btn {
+        margin-left: 10px;
+        font-size: 20px;
+        color: #555;
+        cursor: pointer;
+    }
 }
 
-.res-container{
+.res-container {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
     margin-top: 50px;
     justify-content: center;
 }
-.res-card{
+
+.res-card {
     width: 250px;
     min-height: 300px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
     overflow: hidden;
     text-wrap: wrap;
     transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
-.res-card:hover{
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+
+.res-card:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     transform: translateY(-5px);
     cursor: pointer;
 }
-.res-logo{
+
+.res-logo {
     width: 100%;
-    height: 150px;
+    height: 200px;
     object-fit: cover;
 }
 
-.res-details{
+.res-details {
     padding-inline: 10px;
 }
 
-.rating{
+.rating {
     color: green;
     font-weight: 600;
 }
 
-.duration{
+.duration {
     color: #555;
     font-weight: 500;
 }
 
-.cost{
-    color:#555;
+.cost {
+    color: #555;
     font-weight: 500;
+}
+
+/* shimmar body css */
+
+.shimmar-body {
+    position: relative;
+    padding: 20px 25px 40px 25px;
+    padding-top: calc(80px + 50px);
+    margin: 0;
+
+    .shimmar-top-controls {
+        display: flex;
+        gap: 20px;
+        justify-content: center;
+
+        .shimmar-filter {
+            padding: 10px 15px;
+            font-size: 16px;
+            width: 200px;
+            border: none;
+            border-radius: 8px;
+        }
+    }
+}
+
+.shimmar-search {
+    width: 500px;
+    font-size: 16px;
+    /* margin: auto; */
+    padding: 5px 10px;
+    border-radius: 8px;
+    background-color: #f0f0f0;
+}
+
+.shimmar-search_input {
+    padding: 8px;
+    font-size: 16px;
+    width: 100%;
+    border: none;
+    outline: none;
+    border-radius: 8px;
+    background-color: #f0f0f0;
+}
+
+.shimmar-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 50px;
+    justify-content: center;
+
+    .shimmar-cards {
+        width: 250px;
+        height: 350px;
+        background-color: #f0f0f0;
+        border-radius: 8px;
+        animation: shimmer 1.5s infinite;
+    }
+}
+
+.shimmar-logo {
+    width: 60px;
+    height: 60px;
+    background-color: #f0f0f0;
+    border-radius: 50%;
+    animation: shimmer 1.5s infinite;
+}
+
+/*  */
+.logo-btn {
+    padding: 8px 12px;
+    font-size: 16px;
+    border: none;
+    border-radius: 6px;
+    background-color: greenyellow;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }

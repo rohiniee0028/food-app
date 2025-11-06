@@ -12,7 +12,7 @@ const resList = [
         id: 2,
         name: "Green Bowl",
         cusines: "Salads, Healthy",
-        rating: "4.7",
+        rating: "3.9",
         duration: "20 mins",
         cost: 35000,
         img: "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=800&q=80&auto=format&fit=crop&ixlib=rb-4.0.3&s=0a6b3a0a1f3b3f4d1a2c5d6e7f8a9b0c"
@@ -30,7 +30,7 @@ const resList = [
         id: 4,
         name: "Spice Hub",
         cusines: "Chinese, Indo-Chinese",
-        rating: "4.0",
+        rating: "3.6",
         duration: "25 mins",
         cost: 25000,
         img: "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,h_600/FOOD_CATALOG/IMAGES/CMS/2024/4/9/0b80cf19-1b13-4893-b8fb-d88124d34d0f_29f94631-155f-4f2a-bd99-b3a7ea17f17d.png_compressed"
@@ -49,7 +49,7 @@ const resList = [
         id: 6,
         name: "Taco Town",
         cusines: "Mexican, Tacos",
-        rating: "4.3",
+        rating: "3.0",
         duration: "22 mins",
         cost: 30000,
         img: "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,h_600/FOOD_CATALOG/IMAGES/CMS/2025/3/31/d4e08de4-bf55-4777-afab-7fc227c4ffe8_49b9d160-df1d-4190-91cf-e876e919a54f.png"
@@ -67,7 +67,7 @@ const resList = [
         id: 8,
         name: "Midnight Pizza",
         cusines: "Pizza, Fast Food",
-        rating: "4.1",
+        rating: "3.8",
         duration: "28 mins",
         cost: 42000,
         img: "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,h_600/FOOD_CATALOG/IMAGES/CMS/2024/7/18/e583bc07-410f-4f27-b7a1-5fd3bb72ddfa_169faa36-e46f-4e5b-b720-863ca0246289.jpg",
