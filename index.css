@@ -61,21 +61,28 @@ body {
     font-weight: 500;
     cursor: pointer;
     margin-left: 10px;
+    a{
+        text-decoration: none;
+        color: inherit;
+    }
+}
+
+.component-top-spacing{
+    padding: 20px 25px 40px 25px;
+    padding-top: calc(50px + 50px);
 }
 
 .body {
     position: relative;
     /* add top padding equal to header height + some spacing so content sits below fixed header */
-    padding: 20px 25px 40px 25px;
-    padding-top: calc(80px + 50px);
     margin: 0;
-
     .top-controls {
         display: flex;
         align-items: center;
         gap: 20px;
         justify-content: center;
-
+        padding: 20px 25px 40px 25px;
+        padding-top: calc(80px + 50px);
         .filter-btn {
             padding: 10px 15px;
             font-size: 16px;
