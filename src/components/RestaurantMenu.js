@@ -1,29 +1,17 @@
-import { useEffect, useState } from 'react';
-import restaurantDetails from '../utils/restaurantMenu';
 import { useParams } from 'react-router';
+import useRestaurantMenu from '../hooks/useRestaurantMenu';
+import Shimmar from './shimmar/Shimmar';
 
 const RestaurantMenu = () => {
-    const [resMenu, setResMenu] = useState(null);
     const { resId } = useParams(); // get restaurant id from URL
-    console.log(resId);
+    // console.log(resId);
 
     // below commented code is for when fetching data from real API
-
-    useEffect(() => {
-        // fetchMenu();
-        const data = restaurantDetails.find((res) => res.id == resId);
-        setResMenu(data);
-        console.log('data', data);
-    }, [resId])
-
-    // const fetchMenu = async () => {
-    //     const data = await fetch("http://localhost:4000/api/menu");
-    //     const json = await data.json();
-    //     console.log("Menu:", json);
-    // };
+    const resMenu = useRestaurantMenu(resId);
 
     if (!resMenu) {
-        return <h2 className='text-center mt-10 text-xl'>Loading menu...</h2>;
+        // return <h2 className='text-center mt-10 text-xl'>Loading menu...</h2>;
+        return <Shimmar/>
     }
 
     console.log('resMenu', resMenu);

@@ -4,6 +4,14 @@ body {
     box-sizing: border-box;
 }
 
+.offlineText{
+    text-align: center;
+    margin-top: 100px;
+    color: red;
+    font-size: 24px;
+    font-weight: 600;
+
+}
 .header {
     /* make header fixed at top */
     position: fixed;
@@ -65,6 +73,13 @@ body {
     a {
         text-decoration: none;
         color: inherit;
+    }
+
+    &:first-child{
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        padding: 5px 10px;
+        color: #575656;
     }
 }
 
@@ -309,4 +324,11 @@ a{
             }
         }
     }
+}
+.paddingTop{
+    padding-top: calc(80px + 50px);
+}
+.grocerySection{
+    padding-top: calc(80px + 0px);
+    padding-inline: 25px;
 }

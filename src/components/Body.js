@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import Shimmar from './shimmar/Shimmar';
 import { FiSearch } from "react-icons/fi";
 import { Link } from 'react-router-dom';
+import useOnlineStatus from '../hooks/useOnlineStatus';
 
 const Body = () => {
     const [listOfRestaurants, setListOfRestaurants] = useState(resList);
@@ -11,6 +12,8 @@ const Body = () => {
     const [filterRestaurants, setFilterRestaurants] = useState(resList);
 
     const [searchText, setSearchText] = useState("");
+
+    const onlineStatus = useOnlineStatus();
 
     // below code is for when fetching data from real API
 
@@ -40,6 +43,12 @@ const Body = () => {
         setFilterRestaurants(filteredRest);
     }
 
+
+    if (onlineStatus === false) {
+        return (
+            <h1 className='offlineText'>Looks like You are offline! Please check your internet connection.</h1>
+        )
+    }
 
     // conditional rendering
     return listOfRestaurants.length === 0 ? (

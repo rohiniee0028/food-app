@@ -1,12 +1,15 @@
-import {LOGO_URL} from "../utils/constants";
+import { LOGO_URL } from "../utils/constants";
 import { useState } from 'react';
 import ShimmarImg from './shimmar/ShimmarImg';
 import { Link } from "react-router-dom";
+import useOnlineStatus from "../hooks/useOnlineStatus";
 
 const Header = () => {
     const [logoLoaded, setLogoLoaded] = useState(false);
     const [logoError, setLogoError] = useState(false);
     const [btnName, setBtnName] = useState("Login");
+
+    const onlineStatus = useOnlineStatus();
 
     console.log('Header rendered');
 
@@ -35,6 +38,7 @@ const Header = () => {
             </div>
             <div className="nav-items">
                 <ul>
+                    <li>Online Status : {onlineStatus ? "🟢" : "🔴"}</li>
                     <li>
                         <Link to='/'>Home</Link>
                     </li>
@@ -43,6 +47,9 @@ const Header = () => {
                     </li>
                     <li>
                         <Link to='/contact'>Contact</Link>
+                    </li>
+                    <li>
+                        <Link to='/grocery'>Grocery</Link>
                     </li>
                     <li>
                         Cart
